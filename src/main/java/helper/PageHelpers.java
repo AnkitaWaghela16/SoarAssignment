@@ -11,12 +11,7 @@ public class PageHelpers extends BasePage{
         super(driver);
     }
 
-    /**
-     * Dismiss the welcome banner and cookie message if they are visible.
-     *
-     * @param dismissButton WebElement for the welcome banner dismiss button.
-     * @param meWantItLink  WebElement for the cookie message dismiss link.
-     */
+   
     public void dismissWelcomeAndCookieMessages(WebElement dismissButton, WebElement meWantItLink) {
     	
         if (dismissButton != null && dismissButton.isDisplayed()) {

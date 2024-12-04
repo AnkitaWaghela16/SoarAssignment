@@ -45,9 +45,7 @@ public class HomePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    /**
-     * Dismisses the welcome banner and cookie message.
-     */
+ // Dismisses the welcome banner and cookie message. 
     public void dismissWelcomeAndCookieMessages() {
     	wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath("//button[@aria-label='Close Welcome Banner']")));
@@ -56,16 +54,13 @@ public class HomePage extends BasePage {
 				.invisibilityOfElementLocated(By.xpath("//span[@class='mat-simple-snack-bar-content']")));
     }
 
-    /**
-     * Scrolls to the bottom of the page.
-     */
+    // Scrolls to the bottom of the page.
     public void scrollToBottom() {
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);");
     }
 
-    /**
-     * Selects the maximum number of items per page.
-     */
+    // Selects the maximum number of items per page.
+    
     public void selectMaxItemsPerPage() {
         scrollToElement(itemsPerPageDropdown);
         click(itemsPerPageDropdown);
@@ -81,29 +76,20 @@ public class HomePage extends BasePage {
         click(maxOption);
     }
 
-    /**
-     * Gets the total number of items displayed according to the paginator.
-     *
-     * @return The total number of items displayed.
-     */
+ //Gets the total number of items displayed according to the paginator.
+   
     public int getDisplayedProductCount() {
         waitForVisibility(paginatorRangeLabel);
         String rangeText = paginatorRangeLabel.getText(); // Example: "1-37 of 37"
         return Integer.parseInt(rangeText.split("of")[1].trim());
     }
 
-    /**
-     * Gets the count of product items displayed on the page.
-     *
-     * @return The number of product items displayed.
-     */
+    //Gets the count of product items displayed on the page.
     public int getProductCount() {
         return productItems.size();
     }
 
-    /**
-     * Handles clicking on the account button and then the login button.
-     */
+    //Handles clicking on the account button and then the login button.
     public void clickOnAccountAndLogin() {
         click(accountButton);
         if (loginButton.isDisplayed()) {

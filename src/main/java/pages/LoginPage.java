@@ -29,36 +29,23 @@ public class LoginPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    /**
-     * Enters email and password into the login fields.
-     *
-     * @param email    The email address to enter.
-     * @param password The password to enter.
-     */
+    //Enters email and password into the login fields.
     public void enterCredentials(String email, String password) {
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
     }
 
-    /**
-     * Asserts if the login page is displayed.
-     *
-     * @return true if the login title is displayed, false otherwise.
-     */
+    //Asserts if the login page is displayed.
     public boolean isLoginPageDisplayed() {
         return loginTitle.isDisplayed();
     }
 
-    /**
-     * Clicks the "Not yet a customer?" link to navigate to the registration page.
-     */
+    //Clicks the "Not yet a customer?" link to navigate to the registration page.
     public void clickOnNotYetCustomer() {
         registerLink.click();
     }
 
-    /**
-     * Clicks the login button to submit the login form.
-     */
+   //Clicks the login button to submit the login form.
     public void clickLoginButton() {
         loginButton.click();
     }

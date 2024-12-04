@@ -51,9 +51,7 @@ public class ProductPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    /**
-     * Clicks on the first product in the product list if it is visible.
-     */
+    //Clicks on the first product in the product list if it is visible.
     public void clickOnFirstProduct() {
         if (isElementVisible(firstProduct)) {
             click(firstProduct);
@@ -62,20 +60,12 @@ public class ProductPage extends BasePage {
         }
     }
 
-    /**
-     * Checks if the product popup is displayed.
-     *
-     * @return true if the popup is displayed, false otherwise.
-     */
+  //Checks if the product popup is displayed.
     public boolean isPopupDisplayed() {
         return isElementVisible(productPopup);
     }
 
-    /**
-     * Checks if the product image in the popup is displayed.
-     *
-     * @return true if the product image is displayed, false otherwise.
-     */
+    //Checks if the product image in the popup is displayed.
     public boolean isPopupImageDisplayed() {
         return isElementVisible(productImage);
     }
@@ -98,21 +88,15 @@ public class ProductPage extends BasePage {
         }
     }
 
-    /**
-     * Closes the product popup.
-     */
+    
+     //Closes the product popup.
     public void closePopup() {
         if (isElementVisible(closePopupButton)) {
             click(closePopupButton);
         }
     }
 
-    /**
-     * Utility method to check if an element is visible on the page.
-     *
-     * @param element The WebElement to check.
-     * @return true if the element is visible, false otherwise.
-     */
+    
     private boolean isElementVisible(WebElement element) {
         try {
             return element.isDisplayed();

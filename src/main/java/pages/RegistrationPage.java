@@ -71,9 +71,7 @@ public class RegistrationPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    /**
-     * Validates the visibility of all input fields.
-     */
+    //Validates the visibility of all input fields.
     public void validateInputFields() {
         clickElement(emailField);
         clickElement(passwordField);
@@ -91,9 +89,7 @@ public class RegistrationPage extends BasePage {
         System.out.println("Validation of input fields completed successfully.");
     }
 
-    /**
-     * Asserts that validation error messages are displayed for all fields.
-     */
+    //Asserts that validation error messages are displayed for all fields.
     public void assertFieldErrors() {
         assertTrue(errorEmail.isDisplayed(), "Email error message is not displayed.");
         assertTrue(errorPassword.isDisplayed(), "Password error message is not displayed.");
@@ -102,10 +98,7 @@ public class RegistrationPage extends BasePage {
         assertTrue(errorSecurityAnswer.isDisplayed(), "Security answer error message is not displayed.");
     }
 
-    /**
-     * Fills out the registration form with valid data.
-     * @throws InterruptedException 
-     */
+    //Fills out the registration form with valid data.
     public void fillRegistrationForm() throws InterruptedException {
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
@@ -116,16 +109,12 @@ public class RegistrationPage extends BasePage {
         securityAnswerField.sendKeys(securityAnswer);
     }
 
-    /**
-     * Toggles the "Show Password" option.
-     */
+   //Toggles the "Show Password" option.
     public void toggleShowPassword() {
         clickElement(showPasswordToggle);
     }
 
-    /**
-     * Submits the registration form by clicking the register button.
-     */
+    //Submits the registration form by clicking the register button.
     public void submitRegistrationForm() {
         if (registerButton.isEnabled()) {
             clickElement(registerButton);
@@ -134,19 +123,13 @@ public class RegistrationPage extends BasePage {
         }
     }
 
-    /**
-     * Asserts that the registration success message is displayed.
-     */
+    //Asserts that the registration success message is displayed.
     public void assertRegistrationSuccessMessage() {
         waitForVisibility(registrationSuccessSnackbar);
         assertTrue(registrationSuccessSnackbar.isDisplayed(), "Registration success message is not displayed.");
     }
 
-    /**
-     * Utility method to click an element with a wait for its visibility.
-     *
-     * @param element The WebElement to click.
-     */
+    
     private void clickElement(WebElement element) {
         waitForVisibility(element);
         element.click();
